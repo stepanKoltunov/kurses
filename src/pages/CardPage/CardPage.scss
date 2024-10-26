@@ -1,0 +1,27 @@
+.card {
+  background-color: #fdefd6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+
+  &-back {
+    padding: 8px 4px;
+    background-color: darkgray;
+    color: #fdefd6;
+    border: solid 1px #000000;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  &-title {
+    color: gray;
+    font-size: 35px;
+  }
+
+  &-item {
+    color: gray;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}
