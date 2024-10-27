@@ -1,22 +1,13 @@
-import {PostTypes} from "../../api/post.types";
 import "./PostRow.scss"
-import {useNavigate} from "react-router-dom";
-
-interface  IPostRow extends PostTypes{
-    filterHandler: (title: string) => void
-}
+import {IPostRow} from "./PostRow.types";
+import {usePostRow} from "./usePostRow";
 
 export const PostRow = ({id, userId, body, title, filterHandler}:IPostRow) => {
-    const history = useNavigate()
-
-
-    const rowClickHandler = () => {
-        history(`/post/${id}`)
-    }
+    const {rowClickHandler} = usePostRow()
 
     return(
         <div className={"row-main"}>
-            <div className={"row"} onClick={rowClickHandler}>
+            <div className={"row"} onClick={() => rowClickHandler(id)}>
                 <span>id: {id}</span>
                 <span>body: {body}</span>
                 <span>title: {title}</span>

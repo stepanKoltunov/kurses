@@ -3,8 +3,6 @@ import './CardPage.scss'
 import {CardInfomation} from "../../component/CardInformation/CardInfomation";
 
 export const CardPage = () => {
-
-
     return (
             <div className={"card"}>
                 <div>

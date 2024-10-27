@@ -1,21 +1,7 @@
-import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {postDefaultValue, PostTypes} from "../../api/post.types";
-import axios from "axios";
+import {useCardInfomation} from "./useCardInfomation";
 
 export const CardInfomation = () => {
-    const {cardId} = useParams()
-    const [postData, setPostData] = useState<PostTypes>(postDefaultValue)
-
-    useEffect(() => {
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${cardId}`)
-            .then((response) => {
-                setPostData(response.data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, []);
+    const {postData} = useCardInfomation()
 
     return (
         <div>
